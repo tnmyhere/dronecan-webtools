@@ -6,7 +6,7 @@ A web-based tool for DroneCAN configuration and monitoring. This application pro
 
 ## Access
 
-**Official Entry**: https://can.vimdrones.com
+**Official Entry**: https://can.ardupilot.org
 
 **Backup Entry**: https://can.vimdrones.com
 
