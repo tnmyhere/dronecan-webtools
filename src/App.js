@@ -55,8 +55,9 @@ const App = () => {
     const [dnaServerActive, setDnaServerActive] = useState(false);
 
     const openWindow = (windowTitle, windowPath, windowSize) => {
-        if (subWindowRef[windowPath]) {
-            subWindowRef[windowPath].focus();
+        const existingWindow = subWindowRef[windowPath];
+        if (existingWindow && !existingWindow.closed) {
+            existingWindow.focus();
             return;
         }
         const newWindow = window.open(windowPath, windowTitle, windowSize);
@@ -69,7 +70,7 @@ const App = () => {
                 setSubWindowRef(subWindowRef);
             });
         } else {
-            console.error(`Main: Failed to open ${windowName}`);
+            console.error(`Main: Failed to open ${windowPath}`);
         }
     };
 
